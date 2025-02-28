@@ -25,10 +25,12 @@ function App() {
   return (
     <>
       <Header />
-      <div className="mt-16 p-4">
+      <div className="mt-16 p-4 mx-auto">
         <div className="flex flex-col sm:flex-row justify-between items-center mb-4">
-          <h2 className="text-2xl font-semibold mb-2 sm:mb-0 text-left w-full sm:w-auto">Funcionários</h2>
-          <SearchField placeholder="Pesquisar" onSearch={setSearchTerm} className="w-full sm:w-auto" />
+          <h2 className="text-2xl font-medium mb-2 sm:mb-0 text-left w-full sm:w-auto text-[#1c1c1c] font-['Helvetica Neue'] leading-[24.42px] tracking-[0%]">
+            Funcionários
+          </h2>
+          <SearchField placeholder="Pesquisar" onSearch={setSearchTerm} className="w-full" />
         </div>
         <Table employees={employees} />
       </div>

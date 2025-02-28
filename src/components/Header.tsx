@@ -2,7 +2,7 @@ import React from "react";
 
 const Header: React.FC = () => {
   return (
-    <header className="fixed top-0 w-full bg-white p-4 shadow-md z-50">
+    <header className="fixed top-0 w-full bg-white p-4 shadow-md z-50 bg-[#FFFFFF]">
       <svg
         width="72"
         height="15"
