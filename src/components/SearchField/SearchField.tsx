@@ -4,13 +4,11 @@ import debounce from "lodash.debounce";
 interface SearchFieldProps {
   placeholder: string;
   onSearch: (value: string) => void;
-  className?: string;
 }
 
 const SearchField: React.FC<SearchFieldProps> = ({
   placeholder,
   onSearch,
-  className,
 }) => {
   const [value, setValue] = useState("");
 
@@ -26,13 +24,13 @@ const SearchField: React.FC<SearchFieldProps> = ({
   }, [value, debouncedSearch]);
 
   return (
-    <div className={`relative ${className} bg-[#FFFFFF] border border-[#DFDFDF] rounded-lg w-full sm:w-[287px] h-[48px] p-[12px_16px] gap-[160px]`}>
+    <div className={`relative w-full bg-white-neutral border border-gray-10-neutral rounded-lg w-full sm:w-[287px] h-[48px] p-[12px_16px] gap-[160px]`}>
       <input
         type="text"
         placeholder={placeholder}
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        className="w-full h-full rounded-lg focus:outline-none"
+        className="w-full h-full rounded-lg focus:outline-none font-helvetica-neue"
       />
       <svg
         className="w-5 h-5 absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"

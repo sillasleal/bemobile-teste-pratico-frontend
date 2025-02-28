@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import Table from './Table';
-import { Employee } from '../types/Employee';
+import Table from '.';
+import { Employee } from '../../types/Employee';
 
 const employees: Employee[] = [
   { id: '1', name: 'John Doe', job: 'Developer', admission_date: '2020-01-01T00:00:00.000Z', phone: '1234567890', image: 'https://via.placeholder.com/40' },

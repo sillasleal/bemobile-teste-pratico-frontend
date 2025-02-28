@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
-import SearchField from './SearchField';
+import SearchField from '.';
 
 describe('SearchField', () => {
   it('renders correctly', () => {

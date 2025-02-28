@@ -1,5 +1,90 @@
 @import "tailwindcss";
 
+@layer base {
+  :root {
+    --color-blue-primary: #0500FF;
+    --color-blue-10: #EDEFFB;
+    --color-black-neutral: #1C1C1C;
+    --color-gray-20-neutral: #9E9E9E;
+    --color-gray-10-neutral: #DFDFDF;
+    --color-gray-00-neutral: #F0F0F0;
+    --color-white-neutral: #FFFFFF;
+    --font-helvetica-neue: 'Helvetica Neue', sans-serif;
+  }
+}
+
+@layer components {
+  .bg-blue-primary {
+    background-color: var(--color-blue-primary);
+  }
+  .bg-blue-10 {
+    background-color: var(--color-blue-10);
+  }
+  .text-blue-primary {
+    color: var(--color-blue-primary);
+  }
+  .text-blue-10 {
+    color: var(--color-blue-10);
+  }
+  .bg-black-neutral {
+    background-color: var(--color-black-neutral);
+  }
+  .bg-gray-20-neutral {
+    background-color: var(--color-gray-20-neutral);
+  }
+  .bg-gray-10-neutral {
+    background-color: var(--color-gray-10-neutral);
+  }
+  .bg-gray-00-neutral {
+    background-color: var(--color-gray-00-neutral);
+  }
+  .bg-white-neutral {
+    background-color: var(--color-white-neutral);
+  }
+  .text-black-neutral {
+    color: var(--color-black-neutral);
+  }
+  .text-gray-20-neutral {
+    color: var(--color-gray-20-neutral);
+  }
+  .text-gray-10-neutral {
+    color: var(--color-gray-10-neutral);
+  }
+  .text-gray-00-neutral {
+    color: var(--color-gray-00-neutral);
+  }
+  .text-white-neutral {
+    color: var(--color-white-neutral);
+  }
+  .border-gray-10-neutral {
+    border-color: var(--color-gray-10-neutral);
+  }
+  .font-helvetica-neue {
+    font-family: var(--font-helvetica-neue);
+  }
+  .h1 {
+    font-family: var(--font-helvetica-neue);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24.42px;
+    letter-spacing: 0%;
+  }
+  .h2 {
+    font-family: var(--font-helvetica-neue);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19.54px;
+    letter-spacing: 0%;
+  }
+  .h3 {
+    font-family: var(--font-helvetica-neue);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.09px;
+    letter-spacing: 0%;
+  }
+}
+
 body {
-  background-color: #F0F0F0;
+  background-color: var(--color-gray-00-neutral);
 }
