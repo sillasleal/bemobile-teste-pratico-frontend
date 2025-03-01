@@ -32,7 +32,7 @@ Para iniciar o projeto em modo de desenvolvimento, execute o seguinte comando:
 npm run dev
 ```
 
-Abra o navegador na página [http://localhost:5173](http://localhost:5173).
+Abra o navegador na página <a href="http://localhost:5173" target="_blank">http://localhost:5173</a>.
 
 ### Executar os testes unitários
 
