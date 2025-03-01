@@ -14,6 +14,8 @@ Este é o projeto de teste prático para a posição de Front End na BeMobile.
 4. Inicie o servidor
 5. Execute o projeto
 
+### Instale as dependências
+
 ```bash
 npm install
 ```
