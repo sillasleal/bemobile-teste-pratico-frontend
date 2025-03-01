@@ -20,9 +20,9 @@ const Table: React.FC<TableProps> = ({ employees }) => {
     setExpandedRows(newExpandedRows);
   };
 
-  const headerClass = "px-4 py-2 text-white h2 text-left sm:text-center";
+  const headerClass = "px-4 py-2 text-white h2 text-left";
   const rowClass =
-    "py-2 text-center h3 shadow-[0px_1px_2px_0px_#00000033] bg-[#FFFFFF] h-[49px]";
+    "py-2 h3 shadow-[0px_1px_2px_0px_#00000033] bg-[#FFFFFF] h-[49px]";
   const titleClass =
     "font-helvetica-neue font-medium text-[16px] leading-[19.54px] tracking-[0%] text-black-neutral w-full flex justify-between";
   const valueClass =
@@ -35,7 +35,9 @@ const Table: React.FC<TableProps> = ({ employees }) => {
       <table className="min-w-full bg-white">
         <thead>
           <tr className="w-[961px] h-[47px] bg-blue-primary rounded-t-lg shadow-[0px_1px_2px_0px_#00000033]">
-            <th className={`${headerClass} w-[45px] text-left sm:pl-8`}>FOTO</th>
+            <th className={`${headerClass} w-[45px] text-left sm:pl-8`}>
+              FOTO
+            </th>
             <th className={headerClass}>NOME</th>
             <th className={`${headerClass} sm:hidden pr-5`}>
               <div className="flex justify-end">
@@ -54,9 +56,7 @@ const Table: React.FC<TableProps> = ({ employees }) => {
             <th className={`${headerClass} hidden sm:table-cell`}>
               DATA DE ADMISSÃO
             </th>
-            <th className={`${headerClass} hidden sm:table-cell text-right`}>
-              TELEFONE
-            </th>
+            <th className={`${headerClass} hidden sm:table-cell`}>TELEFONE</th>
           </tr>
         </thead>
         <tbody>
@@ -67,17 +67,15 @@ const Table: React.FC<TableProps> = ({ employees }) => {
                   expandedRows.has(employee.id) ? "border-b-0" : ""
                 } border-gray-200 sm:border-b ${rowClass}`}
               >
-                <td className="py-2 text-left w-[45px] sm:pl-4">
+                <td className="py-2 px-4 w-[45px] sm:pl-8">
                   <img
                     src={employee.image}
                     alt="Foto"
-                    className="rounded-full mx-auto w-8 h-8"
+                    className="rounded-full w-8 h-8"
                   />
                 </td>
-                <td className="py-2 text-left sm:text-center pl-4 sm:pl-0">
-                  {employee.name}
-                </td>
-                <td className="py-2 text-center sm:hidden text-right pr-4">
+                <td className="py-2 px-4 text-left pl-4">{employee.name}</td>
+                <td className="py-2 sm:hidden text-right pr-4">
                   <button
                     onClick={() => toggleRow(employee.id)}
                     title="Toggle Details"
@@ -102,13 +100,13 @@ const Table: React.FC<TableProps> = ({ employees }) => {
                     </svg>
                   </button>
                 </td>
-                <td className="py-2 text-center hidden sm:table-cell">
+                <td className="py-2 px-4 text-left hidden sm:table-cell">
                   {employee.job}
                 </td>
-                <td className="py-2 text-center hidden sm:table-cell">
+                <td className="py-2 px-4 text-left hidden sm:table-cell">
                   {formatDate(employee.admission_date)}
                 </td>
-                <td className="py-2 text-center hidden sm:table-cell">
+                <td className="py-2 px-4 text-left hidden sm:table-cell">
                   {formatPhoneNumber(employee.phone)}
                 </td>
               </tr>
