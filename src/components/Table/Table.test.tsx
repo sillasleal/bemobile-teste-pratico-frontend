@@ -15,12 +15,15 @@ describe('Table', () => {
     expect(getByText('Jane Smith')).toBeInTheDocument();
   });
 
-  it('expands and collapses rows correctly', () => {
+  it('expands and collapses rows correctly on mobile', () => {
+    global.innerWidth = 375;
+    global.dispatchEvent(new Event('resize'));
+
     const { getAllByTitle, queryByText } = render(<Table employees={employees} />);
     const toggleButton = getAllByTitle('Toggle Details')[0];
     fireEvent.click(toggleButton);
-    expect(queryByText('CARGO:')).toBeInTheDocument();
+    expect(queryByText('Cargo:')).toBeInTheDocument();
     fireEvent.click(toggleButton);
-    expect(queryByText('CARGO:')).not.toBeInTheDocument();
+    expect(queryByText('Cargo:')).not.toBeInTheDocument();
   });
 });
