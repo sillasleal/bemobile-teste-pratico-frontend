@@ -35,18 +35,20 @@ const Table: React.FC<TableProps> = ({ employees }) => {
       <table className="min-w-full bg-white">
         <thead>
           <tr className="w-[961px] h-[47px] bg-blue-primary rounded-t-lg shadow-[0px_1px_2px_0px_#00000033]">
-            <th className={`${headerClass} w-[45px] text-left`}>FOTO</th>
+            <th className={`${headerClass} w-[45px] text-left sm:pl-8`}>FOTO</th>
             <th className={headerClass}>NOME</th>
-            <th className={`${headerClass} sm:hidden text-right`}>
-              <svg
-                width="9"
-                height="9"
-                viewBox="0 0 9 9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle cx="4.5" cy="4.5" r="4" fill="white" />
-              </svg>
+            <th className={`${headerClass} sm:hidden pr-5`}>
+              <div className="flex justify-end">
+                <svg
+                  width="9"
+                  height="9"
+                  viewBox="0 0 9 9"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="4.5" cy="4.5" r="4" fill="white" />
+                </svg>
+              </div>
             </th>
             <th className={`${headerClass} hidden sm:table-cell`}>CARGO</th>
             <th className={`${headerClass} hidden sm:table-cell`}>
@@ -65,15 +67,17 @@ const Table: React.FC<TableProps> = ({ employees }) => {
                   expandedRows.has(employee.id) ? "border-b-0" : ""
                 } border-gray-200 sm:border-b ${rowClass}`}
               >
-                <td className="py-2 text-left w-[45px]">
+                <td className="py-2 text-left w-[45px] sm:pl-4">
                   <img
                     src={employee.image}
                     alt="Foto"
                     className="rounded-full mx-auto w-8 h-8"
                   />
                 </td>
-                <td className="py-2 text-left sm:text-center">{employee.name}</td>
-                <td className="py-2 text-center sm:hidden">
+                <td className="py-2 text-left sm:text-center pl-4 sm:pl-0">
+                  {employee.name}
+                </td>
+                <td className="py-2 text-center sm:hidden text-right pr-4">
                   <button
                     onClick={() => toggleRow(employee.id)}
                     title="Toggle Details"
@@ -82,16 +86,18 @@ const Table: React.FC<TableProps> = ({ employees }) => {
                       className={`w-5 h-5 transform transition-transform duration-300 ${
                         expandedRows.has(employee.id) ? "rotate-180" : ""
                       }`}
+                      width="20"
+                      height="11"
+                      viewBox="0 0 20 11"
                       fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M19 9l-7 7-7-7"
+                        d="M1.5 1L10 10L18.5 1"
+                        stroke="#0500FF"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                       />
                     </svg>
                   </button>
@@ -102,7 +108,7 @@ const Table: React.FC<TableProps> = ({ employees }) => {
                 <td className="py-2 text-center hidden sm:table-cell">
                   {formatDate(employee.admission_date)}
                 </td>
-                <td className="py-2 text-right hidden sm:table-cell">
+                <td className="py-2 text-center hidden sm:table-cell">
                   {formatPhoneNumber(employee.phone)}
                 </td>
               </tr>
